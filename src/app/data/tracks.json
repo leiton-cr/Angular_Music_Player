@@ -1,0 +1,21 @@
+{
+    "data": [
+        {
+            "_id": 1,
+            "name": "Getting Over",
+            "album": "One Love",
+            "cover": "https://i.ytimg.com/vi/FjUvcE7Sx6E/maxresdefault.jpg",
+            "artist": {
+                "name": "David Guetta",
+                "nickname": "David Guetta",
+                "nationality": "FR"
+            },
+            "duration": {
+                "start": 0,
+                "end": 333
+            },
+            "url": ""
+
+        }
+    ]
+}
