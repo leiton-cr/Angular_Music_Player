@@ -1,33 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;700&display=swap");
 
+:root {
+  font-family: "Fira Sans", sans-serif;
 
-:root{
-    font-family: 'Fira Sans', sans-serif;
+  --clr-base-1: #1db954;
+  --clr-base-2: #333333;
+  --clr-base-3: #000000;
+  --clr-base-4: #e7e7e7;
+  --clr-base-5: #181818;
 
-    --clr-base-1: #1DB954;
-    --clr-base-2: #333333;
-    --clr-base-3: #000000;
-    --clr-base-4: #e7e7e7;
-    --clr-base-5: #181818;
+  --fsz-small: 0.8rem;
+  --fsz-medium: 1rem;
+  --fsz-big: 1.5rem;
 
-    --fsz-small: .8rem;
-    --fsz-medium: 1rem;
-    --fsz-big: 1.5rem;
-
-    --shd-base-1: rgb(0 0 0 / 35%) 0px 8px 24px ;
-    --shd-base-2: rgba(100 100 111 0.2) 0px 7px 29px 0px ;
-    --ani-1: 200ms
-
+  --shd-base-1: rgb(0 0 0 / 35%) 0px 8px 24px;
+  --shd-base-2: rgba(100 100 111 0.2) 0px 7px 29px 0px;
+  --ani-1: 200ms;
 }
 
-*,*::before,*::after{
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-html, body{
-    margin: 0;
-    padding: 0;
-    background-color: var(--clr-base-3);
-    font-size: var(--fsz-medium);
-    color: var(--clr-base-4);
+body {
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  background-color: var(--clr-base-3);
+  color: var(--clr-base-4);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

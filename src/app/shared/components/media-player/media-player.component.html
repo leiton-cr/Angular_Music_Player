@@ -1,1 +1,54 @@
-<p>media-player works!</p>
+<div class="media-player">
+  <ng-container *ngTemplateOutlet="artist"></ng-container>
+  <ng-container *ngTemplateOutlet="media"></ng-container>
+  <ng-container *ngTemplateOutlet="tools"></ng-container>
+</div>
+
+<ng-template #artist>
+  
+  <div class="media-artist">
+    <div class="media-artist__image--wrapper">
+      <img
+        class="media-artist__image"
+        src={{mockCover.cover}}
+        alt=""
+      />
+    </div>
+
+    <div class="media-artist__info">
+      <p>{{mockCover.name}}</p>
+      <p>{{mockCover.album}}</p>
+    </div>
+
+    <i class="media-artist__like uil uil-heart"></i>
+
+  </div>
+  
+</ng-template>
+
+<ng-template #media>
+  
+    <div class="media-controls">
+        <div class="media-controls__principal">
+            <i class="uil uil-previous media-controls__principal-icon"></i>
+            <i class="uil uil-play media-controls__principal-icon"></i>
+            <i class="uil uil-step-forward media-controls__principal-icon"></i>
+        </div>
+        <div class="media-controls__progress">
+            <progress class="media-controls__progress-bar" min="0" max="100" value="50"></progress>
+        </div>
+        <div class="media-controls__time">
+            <span>00:00</span>
+            <span>59:59</span>
+        </div>
+    </div>
+
+</ng-template>
+
+<ng-template #tools>
+  <div class="media-controls__tool">
+    <i class="uil uil-unlock media-controls__tool-icon"></i>
+    <i class="uil uil-list-ul media-controls__tool-icon"></i>
+    <i class="uil uil-volume-down  media-controls__tool-icon"></i>
+  </div>
+</ng-template>

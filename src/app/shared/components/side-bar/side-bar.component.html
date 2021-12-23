@@ -1,1 +1,46 @@
-<p>side-bar works!</p>
+<div class="side-bar">
+  <div>
+    <i class="uil uil-ellipsis-h"></i>
+  </div>
+
+  <ul class="side-bar__list list-one">
+    <li
+      [routerLink]="item.route"
+      routerLinkActive="router-link-active"
+      *ngFor="let item of mainMenu.defaultOptions"
+    >
+      <div class="list-wrapper-items">
+        <i class="side-bar__list list-icon" [class]="item.icon"></i>
+        <span class="side-bar__list list-label">
+          {{ item.name }}
+        </span>
+      </div>
+    </li>
+  </ul>
+
+  <ul class="side-bar__list list-two">
+    <li
+      [routerLink]="item.route"
+      *ngFor="let item of mainMenu.alternativeOptions"
+    >
+      <div class="list-wrapper-items">
+        <i class="side-bar__list list-icon" [class]="item.icon"></i>
+        <span class="side-bar__list list-label">
+          {{ item.name }}
+        </span>
+      </div>
+    </li>
+  </ul>
+
+  <hr class="side-bar__separator" />
+
+  <ul class="side-bar__list list-three">
+    <li [routerLink]="item.route" *ngFor="let item of mainMenu.customOptions">
+      <div class="list-wrapper-items">
+        <span class="side-bar__list list-label">
+          {{ item.name }}
+        </span>
+      </div>
+    </li>
+  </ul>
+</div>

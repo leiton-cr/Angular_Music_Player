@@ -1,0 +1,35 @@
+.play-list-body__table{
+    width: 100%;
+    padding: 1em;
+    border-collapse: collapse;
+
+    &-head{ 
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.384);
+    }
+
+    &-header{ 
+        display: inline block;
+        padding-bottom: 1em;
+    }
+
+    &-data{
+        padding-bottom: 1em;
+    }
+
+    &-image{
+        width: 75px;
+        height: 75px;
+        margin-right: 1em;
+    }
+
+    &-wrapper{
+        display: flex;
+        align-items: center;
+    }
+}
+
+.play-list-body__artist-name{
+    font-weight: lighter;
+    font-size: var(--fsz-small);
+}

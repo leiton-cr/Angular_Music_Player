@@ -1,0 +1,12 @@
+.main-homepage{
+    display: flex;
+   
+
+    &__body{
+        background-color: var(--clr-base-5);
+        padding: 1em;
+        width: 100%;
+    }
+
+    margin-bottom: 6em;
+}

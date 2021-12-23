@@ -1,0 +1,44 @@
+<table class="play-list-body__table">
+  <thead class="play-list-body__table-head">
+    <tr class="play-list-body__table-row">
+      <th class="play-list-body__table-header" *ngFor="let item of heading" (click)='selectSort(item.property)'>
+        {{ item.name }}
+        <i
+          class="uil uil-angle-double-{{
+            sortOption!.sorting === 'asc' ? 'up' : 'down'
+          }}"
+        ></i>
+      </th>
+      <th class="play-list-body__table-header">
+        <i class="uil uil-clock"></i>
+        <i
+          class="uil uil-angle-double-{{
+            sortOption!.sorting === 'asc' ? 'up' : 'down'
+          }}"
+        ></i>
+      </th>
+    </tr>
+  </thead>
+  <tbody class="play-list-body__table-body">
+    <tr
+      *ngFor=" let item of tracks | orderList: sortOption!.property:sortOption!.sorting" >
+      <ng-container
+        *ngTemplateOutlet="card_template; context: { item: item }"
+      ></ng-container>
+    </tr>
+  </tbody>
+</table>
+<ng-template #card_template let-item="item">
+  <td class="play-list-body__table-data">
+    <div class="play-list-body__table-wrapper">
+      <img class="play-list-body__table-image" src="{{ item.cover }}" alt="" />
+      <div>
+        <p class="play-list-body__track-name">{{ item.name }}</p>
+        <p class="play-list-body__artist-name">{{ item.artist.name }}</p>
+      </div>
+    </div>
+  </td>
+  <td class="play-list-body__table-data">{{ item.album }}</td>
+  <td class="play-list-body__table-data">{{ item.name }}</td>
+  <td class="play-list-body__table-data">{{ item.album }}</td>
+</ng-template>

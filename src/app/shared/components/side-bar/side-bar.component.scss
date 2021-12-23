@@ -1,0 +1,44 @@
+.side-bar {
+    width: 15.5em;
+    height: 100vh;
+    padding: .5rem 1 rem;
+    background-color: var(--clr-base-3);
+    position: sticky;
+    top: 0;
+
+    &__list{
+        list-style: none;
+        padding: .5em .5em;
+        margin: 0;
+        opacity: .8;
+ 
+        & .list-wrapper-items{
+            // Quita el highlight al dar click en movil
+            -webkit-tap-highlight-color: transparent;
+            margin-bottom: .25em;
+            user-select: none;
+            cursor: pointer;
+            transition: color 300ms;
+        }
+
+        & .list-wrapper-items:hover{
+            color: var(--clr-base-1);
+        }
+
+        & .list-wrapper-items:active{
+            outline: none;
+        }
+
+        &.list-icon{
+            font-size: var(--fsz-big);
+        }
+
+    }
+
+    &__separator{ 
+        border: .1px solid var(--clr-base-4);
+        opacity: .5;
+        width: 90%;
+    }
+
+}

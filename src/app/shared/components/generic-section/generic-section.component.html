@@ -1,0 +1,15 @@
+<div class="generic-section">
+  <h2 class="generic-section__title">{{ title }}</h2>
+  <hr />
+
+  <div class="generic-section__player-zone">
+    <ul
+      class="generic-section__player-list"
+      [ngClass]="{ 'small-card': mode === 'small', 'big-card': mode === 'big' }"
+    >
+      <li *ngFor="let track of dataTracks">
+        <app-card-player [mode]="mode" [track]="track"> </app-card-player>
+      </li>
+    </ul>
+  </div>
+</div>

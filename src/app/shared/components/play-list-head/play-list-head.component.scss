@@ -1,0 +1,34 @@
+.play-list-head{
+    display: flex;
+    column-gap: 2em;
+    margin-bottom: 2em;
+
+    &__image{
+        padding: 3em;
+        width: 250px;
+        height: 250px;
+        object-fit: contain;
+        background-color: var(--clr-base-2);
+        box-shadow: var(--shd-base-1);
+    }
+
+    &__text-side{
+        margin-top: auto;
+        padding-bottom: 2em;
+    }
+
+    &__pre-title{
+        text-transform: uppercase;
+    }
+
+    &__title{
+        font-size: calc(var(--fsz-big) * 3);
+        margin: 0;
+        font-weight: bold;
+    }
+
+    &__user-info{
+        
+    }
+
+}
