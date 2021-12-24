@@ -31,7 +31,7 @@
 <ng-template #card_template let-item="item">
   <td class="play-list-body__table-data">
     <div class="play-list-body__table-wrapper">
-      <img class="play-list-body__table-image" src="{{ item.cover }}" alt="" />
+      <img appBrokenImg class="play-list-body__table-image" src="{{ item.cover }}" alt="" />
       <div>
         <p class="play-list-body__track-name">{{ item.name }}</p>
         <p class="play-list-body__artist-name">{{ item.artist.name }}</p>

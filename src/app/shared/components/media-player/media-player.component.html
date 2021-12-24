@@ -7,13 +7,15 @@
 <ng-template #artist>
   
   <div class="media-artist">
-    <div class="media-artist__image--wrapper">
+    
       <img
+        appBrokenImg
+        [alternativeImg]="'https://images.pond5.com/glitch-effect-arises-list-music-footage-132386161_iconl.jpeg'"
         class="media-artist__image"
         src={{mockCover.cover}}
         alt=""
       />
-    </div>
+   
 
     <div class="media-artist__info">
       <p>{{mockCover.name}}</p>

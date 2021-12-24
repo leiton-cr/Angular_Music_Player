@@ -10,7 +10,7 @@ export class MediaPlayerComponent implements OnInit {
 
   public mockCover: Track = {
     name : 'Bebe (Oficial video)', 
-    cover: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGqo_jIPPwwmsMmglLrfJ1NoxHDMGJrOXY6w&usqp=CAU',
+    cover: 'https://aencrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGqo_jIPPwwmsMmglLrfJ1NoxHDMGJrOXY6w&usqp=CAU',
     album: 'Justin Bieber',
     url: 'http://localhost/track.mp3',
     _id: 1

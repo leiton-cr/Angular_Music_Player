@@ -15,14 +15,13 @@
   justify-content: center;
   align-items: center;
 
-  &__image--wrapper {
-    margin-left: 1em;
-    width: 70px;
-    height: 70px;
-    overflow: hidden;
-  }
 
   &__image {
+    margin-left: 1em;
+    overflow: hidden;
+    width: 70px;
+    min-width: 70px;
+    height: 70px;
     object-fit: cover;
   }
 

@@ -11,16 +11,13 @@ export class OrderListPipe implements PipeTransform {
     sorting: 'asc' | 'desc' | null = 'asc'
   ): Array<Track> {
     try {
-      if (!param) 
-        return value;
-    
+      if (!param) return value;
+
       value = value.sort((a, b) =>
         a[param] < b[param] ? -1 : a[param] > b[param] ? 1 : 0
       );
 
-      if(sorting === 'desc')
-        value = value.reverse();
-
+      if (sorting === 'desc') value = value.reverse();
     } catch (e) {
       console.log('e');
     } finally {

@@ -1,0 +1,98 @@
+.main-auth {
+  hr {
+    margin: 2em 0;
+  }
+
+  min-height: 100vh;
+  background-color: snow;
+  color: var(--clr-base-5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 7em;
+
+  &__form-input {
+    width: 100%;
+    padding: 0.5em;
+    margin: .5em 0;
+    font-size: 1.2em;
+    border: none;
+    box-shadow: var(--shd-base-1);
+
+    &.ng-dirty.ng-invalid{
+      outline: 2px solid rgb(255, 38, 0)!important;
+    }
+
+    &.ng-dirty.ng-valid{
+      outline: 2px solid rgb(2, 177, 2)!important;
+    }
+
+  }
+
+  &__form-label,
+  &__form-submit {
+    display: inline-block;
+    margin-top: 2em;
+  }
+
+  &__form-submit,
+  &__form-button {
+    cursor: pointer;
+    box-shadow: var(--shd-base-1);
+    border: none;
+    border-radius: 0.2em;
+    font-size: 1.2em;
+  }
+
+  &__form-forgotten {
+    width: 100%;
+    position: relative;
+    padding-left: 23em;
+    display: block;
+    color: var(--clr-base-5);
+  }
+
+  &__form-submit {
+    transition: filter 500ms;
+    padding: 0.5em;
+    background-color: var(--clr-base-1);
+    color: white;
+  }
+
+  &__form-button {
+    padding: 1em;
+
+    &:first-child {
+      background-color: white;
+    }
+
+    &:nth-child(2) {
+      background-color: #3b5998;
+      color: white;
+    }
+
+    &:last-child {
+      background-color: black;
+      color: white;
+    }
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5em;
+  }
+
+  &__form-wrapper,
+  &__social {
+    width: 35em;
+  }
+}
+
+.invalid__button{
+  filter: grayscale(.5) brightness(.5);
+}

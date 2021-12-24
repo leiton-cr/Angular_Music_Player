@@ -1,1 +1,27 @@
-<p>auth-page works!</p>
+<main class="main-auth">
+
+    <div class="main-auth__form-wrapper">
+        <h1 class="main-auth__title">Debes iniciar sesión para continuar</h1>
+
+        <form [formGroup]="form" (ngSubmit)="login()">
+          <label class="main-auth__form-label" for="email">Email</label>
+          <input formControlName='email' class="main-auth__form-input" type="text" name="email" id="email" />
+      
+          <label class="main-auth__form-label" for="password">Contraseña</label>
+          <input formControlName='password' class="main-auth__form-input" type="password" name="password" id="password" />
+      
+          <a href="" class="main-auth__form-forgotten" > He olvidado la contraseña </a>
+      
+          <input class=" main-auth__form-input main-auth__form-submit {{form.invalid ? 'invalid__button' : ''}}" type="button" value="Iniciar sesión" [disabled]="form.invalid" title="{{form.invalid ? 'Los valores no son válidos': ''}}" />
+        </form>
+
+        <hr />
+
+    </div>
+
+  <div class="main-auth__social">
+    <button class="main-auth__form-button"><i class="uil uil-google"></i> Ingresar mediante Google</button>
+    <button class="main-auth__form-button"><i class="uil uil-facebook-f"></i> Ingresar mediante Social</button>
+    <button class="main-auth__form-button"><i class="uil uil-apple-alt"></i> Ingresar mediante Apple</button>
+  </div>
+</main>
