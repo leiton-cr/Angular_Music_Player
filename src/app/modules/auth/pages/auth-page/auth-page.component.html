@@ -12,8 +12,12 @@
       
           <a href="" class="main-auth__form-forgotten" > He olvidado la contraseña </a>
       
-          <input class=" main-auth__form-input main-auth__form-submit {{form.invalid ? 'invalid__button' : ''}}" type="button" value="Iniciar sesión" [disabled]="form.invalid" title="{{form.invalid ? 'Los valores no son válidos': ''}}" />
+          <input class=" main-auth__form-input main-auth__form-submit {{form.invalid ? 'invalid__button' : ''}}" type="submit" value="Iniciar sesión" [disabled]="form.invalid" title="{{form.invalid ? 'Los valores no son válidos': ''}}" />
         </form>
+
+        <div class="session__error" *ngIf="sessionError">
+          Surgió un error con sus credenciales.
+        </div>
 
         <hr />
 

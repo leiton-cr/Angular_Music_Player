@@ -6,7 +6,7 @@
 
 <ng-template #artist>
   
-  <div class="media-artist">
+  <div class="media-artist" *ngIf="service.trackInfo | async as mockCover">
     
       <img
         appBrokenImg
@@ -33,15 +33,18 @@
     <div class="media-controls">
         <div class="media-controls__principal">
             <i class="uil uil-previous media-controls__principal-icon"></i>
-            <i class="uil uil-play media-controls__principal-icon"></i>
+            <button (click)="service.togglePlaying()">
+             
+              <i class="uil uil-{{(service.playingStatus  | async)=== 'paused' ? 'play' : 'pause'}} media-controls__principal-icon"></i>
+            </button>
             <i class="uil uil-step-forward media-controls__principal-icon"></i>
         </div>
         <div class="media-controls__progress">
-            <progress class="media-controls__progress-bar" min="0" max="100" value="50"></progress>
+            <progress #progress class="media-controls__progress-bar" min="0" max="100" value="{{service.elapsedPercentage | async}}" (click) ='printProgress($event)'></progress>
         </div>
         <div class="media-controls__time">
-            <span>00:00</span>
-            <span>59:59</span>
+            <span>{{service.elapsedTime | async}}</span>
+            <span>{{service.totalTime | async}}</span>
         </div>
     </div>
 

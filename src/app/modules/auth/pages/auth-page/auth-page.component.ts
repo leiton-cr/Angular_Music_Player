@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '@modules/auth/auth.service';
+import { lastValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-auth-page',
@@ -7,9 +10,18 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./auth-page.component.scss'],
 })
 export class AuthPageComponent implements OnInit {
+
+  public sessionError:boolean;
   public form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,  
+    private service:AuthService,
+    private router: Router
+    ) {
+
+    this.sessionError = false;
+
     this.form = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', 
@@ -19,8 +31,17 @@ export class AuthPageComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  login(){
-    const body = this.form.value;
+  async login(){
+    const {email, password} = this.form.value;
+    const { data, tokenSession } = await lastValueFrom(this.service.sendCredentials(email, password));
+  
+    if(!data){
+      this.sessionError = true;
+    }else{
+      this.sessionError = false;
+      this.router.navigate(['/', 'tracks'])
+    }
+   
   }
 
 }

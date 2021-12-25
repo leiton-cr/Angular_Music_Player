@@ -96,3 +96,26 @@
 .invalid__button{
   filter: grayscale(.5) brightness(.5);
 }
+
+.session__error{
+  position: absolute;
+  top: 2em;
+  right: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  padding: 1em 2em 1em 1em ;
+  color: snow;
+  font-weight: bold;
+  font-size: 1em;
+  background-color: rgb(170, 36, 12);
+  border-radius: .5em 0 0 .5em;
+  
+  animation: appear__error 500ms forwards;
+}
+
+@keyframes appear__error {
+  to{
+    transform: scaleX(1)
+  }
+  
+}

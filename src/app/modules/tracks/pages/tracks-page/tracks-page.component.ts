@@ -1,22 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Track } from '@core/models/track.model';
-
-import * as rawData from '@data/tracks.json';
+import { TracksService } from '@modules/tracks/tracks.service';
+import { firstValueFrom, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-tracks-page',
   templateUrl: './tracks-page.component.html',
-  styleUrls: ['./tracks-page.component.scss']
+  styleUrls: ['./tracks-page.component.scss'],
 })
-export class TracksPageComponent implements OnInit {
+export class TracksPageComponent implements OnInit, OnDestroy {
+  private observers: Array<Subscription>;
 
-  public mockTracks!: Array<Track>;
+  public tracksRandom: Array<Track>;
+  public tracksTrending: Array<Track>;
 
-  constructor() { }
+  constructor(private service: TracksService) {
+    this.observers = [];
 
-  ngOnInit(): void {
-    const { data }: any = ( rawData as any).default;
-    this.mockTracks = data;
+    this.tracksRandom = [];
+    this.tracksTrending = [];
   }
 
+  ngOnInit(): void {
+    this.loadAllData();
+    this.loadRandomData();
+  }
+
+  ngOnDestroy(): void {
+    this.observers.forEach((sub: Subscription) => sub.unsubscribe());
+  }
+
+  async loadAllData(): Promise<any> {
+    const data = await firstValueFrom(this.service.getAllTracks$());
+    this.tracksTrending = data;
+  }
+
+  async loadRandomData(): Promise<any> {
+    const data = await firstValueFrom(this.service.getAllRandom$());
+    this.tracksRandom = data;
+  }
 }

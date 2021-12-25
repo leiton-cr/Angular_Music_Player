@@ -19,6 +19,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('@modules/tracks/tracks.module').then((m) => m.TracksModule),
   },
+  {
+    path: "**",
+    redirectTo: '/tracks'
+  }
+
 ];
 
 @NgModule({

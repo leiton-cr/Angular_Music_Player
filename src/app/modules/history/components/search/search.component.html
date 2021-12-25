@@ -1,0 +1,8 @@
+<input 
+    type="text"
+    placeholder="Busca tus artistas favoritos" 
+    class="search-component__input"
+    [(ngModel)]="filter"
+    (ngModelChange)="search($event)"
+    maxlength="25"
+    >
