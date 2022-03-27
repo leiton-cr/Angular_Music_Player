@@ -1,0 +1,10 @@
+{
+    "wrongUser": {
+        "email":"x0x0x0x0x0",
+        "password": "-------------"
+    },
+    "verifyUser": {
+        "email":"test@test.com",
+        "password": "12345678"
+    }
+}

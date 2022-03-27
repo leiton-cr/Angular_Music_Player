@@ -10,11 +10,13 @@ import { MultimediaService } from '@shared/services/multimedia.service';
 export class CardPlayerComponent implements OnInit {
 
   @Input() mode!: 'small' | 'big';
-  @Input() track!: Track;
+  @Input() track: Track;
 
   constructor(
     private service: MultimediaService
-  ) { }
+  ) {
+    this.track = {cover: '', name: '', album: ''}
+  }
 
   ngOnInit(): void { }
 

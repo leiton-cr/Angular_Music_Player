@@ -5,11 +5,22 @@ import { Directive, ElementRef, Host, HostListener, Input } from '@angular/core'
 })
 export class BrokenImgDirective {
 
-  @Input() alternativeImg:string = '';
+  @Input() alternativeImg:string | boolean = false;
+
+
 
   // Ecucha evento del host
   @HostListener('error') handleError():void{
-    this.host.nativeElement.src = this.alternativeImg === '' ? '../../../assets/images/cover_404.jpg' : this.alternativeImg;
+    
+    const { nativeElement } = this.host;
+
+    if(this.alternativeImg){
+      nativeElement.src = this.alternativeImg;
+    }else{
+      nativeElement.src = '../../../assets/images/cover_404.jpg';
+    }
+    
+    
   };
 
   // Inyectamos el host para manipulacion
